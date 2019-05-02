@@ -45,6 +45,7 @@ gulp.task('minify-libs', (cb) => pump( tratamentJs(PATH.libs, 'libs.js'), cb ) )
 
 gulp.task('minify-css', () => 
     gulp.src(PATH.css)
+    .pipe( concat('all.css'))
     .pipe( cleanCss({compatibility: 'ie8'}) )
     .pipe( gulp.dest( `${PATH.output}/css`) )
 )
