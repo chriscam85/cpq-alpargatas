@@ -37,7 +37,7 @@ function tratamentJs(input, output) {
     ]
 }
 
-gulp.task( 'delete', () => del(PATH.output) );
+gulp.task('delete', () => del(PATH.output) )
 
 gulp.task('minify-scripts', (cb) => pump( tratamentJs(PATH.js, 'bundle.js'), cb ) )
 
