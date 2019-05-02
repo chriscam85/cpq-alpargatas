@@ -21,17 +21,17 @@ pivo.prototype.validaPivo = function(celda){
 }
 
 pivo.prototype.validaPivoTotal = function(celda){
-    var celdasInput = celda.find("input");
-    var celdasNumero = $.map(celdasInput.slice(0), function(value){
-        return Number($(value).val());
-    });
-    var totalCeldas = celdasNumero.reduce(function(valorAnterior, valorActual, indice, vector){
-        return valorAnterior + valorActual;
-    });
-    if(totalCeldas > this.cotaDisponivel && !this.pivoLivre){
-        return false;
-    }
-    else{
-        return true;
-    }
+  var celdasInput = celda.find("input");
+  var celdasNumero = $.map(celdasInput.slice(0), function(value){
+    return Number($(value).val());
+  });
+  var totalCeldas = celdasNumero.reduce(function(valorAnterior, valorActual, indice, vector){
+    return valorAnterior + valorActual;
+  });
+  if(totalCeldas > this.cotaDisponivel && !this.pivoLivre){
+    return false;
+  }
+  else{
+    return true;
+  }
 }

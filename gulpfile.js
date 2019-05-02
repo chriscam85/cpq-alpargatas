@@ -22,7 +22,7 @@ const PATH = {
         'CustomJS/validadorCelda.js',
         'CustomJS/envioDatos.js'
     ],
-    libs: 'libs/*.js',
+    libs: 'javascript/*.js',
     output: 'build'
 }
 

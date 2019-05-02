@@ -1,0 +1,304 @@
+#config-header, #tab-array-content, .side-bar-content .items-header, .side-bar-content #recommendation-section, .side-bar-content .items-table-content {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  
+  .button-middle a {
+    padding: 0 0.9375rem;
+    border: 1px solid black;
+    text-transform: uppercase;
+    line-height: 1.5625rem;
+    position: static !important;
+    text-shadow: 0 1px 0 white;
+    border: 1px solid #AAA;
+    background-image: #e1e1e1;
+    background-image: -webkit-linear-gradient(#fafafa, #e1e1e1);
+    background-image: -o-linear-gradient(#fafafa, #e1e1e1);
+    background-image: -moz-linear-gradient(#fafafa, #e1e1e1);
+    background-image: linear-gradient(#fafafa, #e1e1e1);
+    -moz-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    -webkit-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+  }
+  .button-middle a:hover {
+    border-color: black;
+    color: black;
+    text-decoration: none;
+  }
+  
+  #main-table-wrapper {
+    -webkit-font-smoothing: antialiased;
+  }
+  #main-table-wrapper #main-content, #main-table-wrapper .side-bar-content {
+    width: 100% !important;
+    display: block;
+  }
+  
+  .grid {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #AAA;
+    padding: 0.3125rem;
+    box-sizing: border-box;
+    border-radius: 3px;
+  }
+  
+  #config-header {
+    text-align: left;
+    display: block;
+    float: none;
+    color: black;
+    margin-top: 0.625rem;
+    margin-bottom: 0.625rem;
+  }
+  
+  #pipeline-viewer-opener {
+    display: none;
+  }
+  
+  .tab-content {
+    border: none;
+    padding: 0;
+  }
+  
+  #loading-dialog {
+    background-image: url("/bmfsweb/alpargatastest1/image/images/loading.gif");
+    background-color: transparent;
+    background-size: contain;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    width: 40px;
+    height: 40px;
+    background-position: 0 0;
+    border: none;
+  }
+  #loading-dialog img {
+    display: none;
+  }
+  
+  .button-start-over {
+    display: none !important;
+  }
+  
+  .button-left, .button-right {
+    display: none;
+  }
+  
+  .button-middle {
+    background: transparent;
+    padding: 0.3125rem 0;
+  }
+  .button-middle a {
+    display: block;
+  }
+  
+  .grid .array-wrapper, .grid table {
+    width: 100%;
+  }
+  .grid .array-wrapper {
+    border: 1px solid #AAA;
+  }
+  .grid table {
+    border-collapse: collapse;
+  }
+  .grid table, .grid table th, .grid table td {
+    border: none;
+  }
+  .grid table thead th {
+    background-color: #c4c4c4;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+  }
+  
+  #tabela_cor_tamanho {
+    border: 1px solid #AAA;
+    border-radius: 3px;
+    padding: 3px;
+  }
+  
+  .configuration-form {
+    display: flex;
+    flex-direction: column;
+  }
+  .body-inner .configuration-form {
+    margin: 0 auto;
+  }
+  
+  #tab-array-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: transparent;
+  }
+  #tab-array-content .grid {
+    width: 24.5%;
+    margin: 0 0 0.625rem 0;
+    box-shadow: 3px 3px 0px 0px rgba(160, 154, 154, 0.2);
+  }
+  #tab-array-content #grid-36693765 .column, #tab-array-content #grid-36693679 .column {
+    width: 100% !important;
+  }
+  #tab-array-content #grid-36672707 {
+    width: 100%;
+  }
+  #tab-array-content #grid-36672707 .column {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #tab-array-content #grid-36693765 {
+    display: flex;
+  }
+  #tab-array-content #grid-36693765 .row {
+    width: 50%;
+  }
+  #tab-array-content #grid-36693757 {
+    display: none;
+  }
+  
+  .attribute-inner, .attribute-label-container {
+    display: flex;
+    padding: 0;
+  }
+  
+  .attribute-inner {
+    margin: 0.3125rem;
+    flex-direction: column;
+  }
+  
+  .attribute-field-container {
+    position: relative;
+    max-width: 100% !important;
+  }
+  #attribute-categoria_dinamico .attribute-field-container, #attribute-categoria_novo_text .attribute-field-container {
+    max-width: 200px !important;
+  }
+  .attribute-field-container, .attribute-field-container input[type=text], .attribute-field-container input[type=number], .attribute-field-container textarea {
+    width: 100%;
+  }
+  .attribute-field-container input[type=text], .attribute-field-container input[type=number], .attribute-field-container .ui-button {
+    height: 1.25rem;
+  }
+  .attribute-field-container input[type=text], .attribute-field-container input[type=number], .attribute-field-container textarea, .attribute-field-container select {
+    padding: 0 2.1875rem 0 0.625rem;
+    border: 1px solid #AAA;
+    box-sizing: border-box;
+    border-radius: 3px;
+  }
+  .attribute-field-container .ui-button {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    width: 1.5625rem;
+    border: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 1px;
+    top: 0;
+  }
+  .attribute-field-container .ui-button .ui-icon {
+    background: url("/bmfsweb/alpargatastest1/image/images/icon-arrow.png");
+    width: 16px;
+    height: 16px;
+  }
+  .attribute-field-container .ui-button-text {
+    display: none;
+  }
+  
+  .attribute-label-container {
+    text-align: left !important;
+    width: 100% !important;
+  }
+  .attribute-label-container .attribute-label {
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+  
+  .date-field {
+    padding: 0;
+  }
+  .date-field, .date-field input[type=text] {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .date-trigger {
+    background: transparent;
+    width: 1.5625rem;
+    border: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 1px;
+  }
+  .date-trigger::after {
+    content: "";
+    background: url("/bmfsweb/alpargatastest1/image/images/icon-calendar.png");
+    width: 16px;
+    height: 16px;
+  }
+  
+  .ui-autocomplete {
+    border-radius: 0 0 3px 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-bottom-color: transparent;
+  }
+  
+  .ui-menu-item {
+    padding: 0 0.625rem;
+    line-height: 1.25rem;
+    height: 1.25rem;
+  }
+  .ui-menu-item .ui-corner-all {
+    color: black;
+  }
+  .ui-menu-item .ui-state-hover {
+    background: #AAA;
+    color: white;
+  }
+  
+  .error-qtd input[type=text] {
+    border: 1px solid red;
+  }
+  
+  .item-error {
+    color: red;
+    font-size: 0.6875rem;
+    display: block;
+    margin: 0.3125rem 0;
+  }
+  
+  .side-bar-content {
+    padding: 0 !important;
+  }
+  .side-bar-content .collapse-toggle {
+    background-color: #AAA;
+  }
+  .side-bar-content .items-header .grouping-heading {
+    height: 1.25rem;
+  }
+  .side-bar-content .grouping-heading {
+    color: black;
+  }
+  .side-bar-content .items-header, .side-bar-content #recommendation-section, .side-bar-content .items-table-content {
+    background-color: white;
+  }
+  .side-bar-content .items-table-content {
+    border: 1px solid #AAA;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .side-bar-content table.spare-grid th {
+    white-space: normal;
+  }
+  
+  .view-header, .form-header {
+    background: transparent;
+    color: black;
+  }

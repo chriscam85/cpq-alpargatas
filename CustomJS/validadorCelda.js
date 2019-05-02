@@ -1,6 +1,6 @@
 function validadorCelda(){
-    this.modelo;
-    this.celdasTamanhos;
+	this.modelo;
+	this.celdasTamanhos;
     this.centro;
     this.canal;
     this.org;
@@ -15,7 +15,7 @@ validadorCelda.prototype.setProperties = function(object){
 
 validadorCelda.prototype.run = function(callback){
     var me = this;
-    consultarCategoria(me.modelo, function(dato){
+	consultarCategoria(me.modelo, function(dato){
         me.consultarCategoriaResponse(me, dato, function(datos){
             me.consultarDetallesPorModeloResponse(datos);
             callback();
@@ -24,7 +24,7 @@ validadorCelda.prototype.run = function(callback){
 }
 
 validadorCelda.prototype.consultarCategoriaResponse = function(me, dato, callback){
-    consultarDetallesPorModeloYEstructura(dato, me.centro, me.canal, me.org, function(datos){
+	consultarDetallesPorModeloYEstructura(dato, me.centro, me.canal, me.org, function(datos){
         callback(datos);
     });
 }

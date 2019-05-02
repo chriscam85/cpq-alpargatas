@@ -1,0 +1,120 @@
+.allWidth {
+    width: 100% !important;
+  }
+  
+  #attribute-categoria_dinamico .attribute-field-container {
+    max-width: 240px !important;
+  }
+  
+  .button-invoke-create{
+    display: none !important;
+  }
+  
+  .hideGrid,
+  #campos_cota,
+  #attribute-seleccionar_centro_text 
+  {
+    visibility: hidden;
+  }
+  
+  .flechasPadre{
+    display: flex;
+    justify-content: center;
+    overflow: initial;
+    text-align: center;
+  }
+  
+  .flechaLeft {
+      content: "";
+      width:0px;
+      height:0px;
+      border-bottom:10px solid transparent;
+      border-top:10px solid transparent;
+      border-right:13px solid;
+      font-size:0px;
+      line-height:0px;
+      right: 5px;
+      position: relative;
+  }
+  
+  .flechaRight {
+      content: "";
+      width:0px;
+      height:0px;
+      border-bottom:10px solid transparent;
+      border-top:10px solid transparent;
+      border-left:13px solid;
+      font-size:0px;
+      line-height:0px;
+      left: 5px;
+      position: relative;
+  }
+  
+  .flechaRightNoActiva {
+    border-left-color: #ccc;
+    pointer-events: none;
+  }
+  
+  .flechaRightActiva {
+    border-left-color: #007eff;
+    pointer-events: all;
+  }
+  
+  .flechaLeftNoActiva {
+    border-right-color: #ccc;
+    pointer-events: none;
+  }
+  
+  .flechaLeftActiva {
+    border-right-color: #007eff;
+    pointer-events: all;
+  }
+  
+  .filaVisible{
+    display: table-row;
+  }
+  
+  #attribute-disponibilidadePorModelo,
+  .filaOculta{
+    display: none;
+  }
+  
+  .disp-cantidadDisp,
+  .livre-cantidad,
+  .material-cantidad,
+  .cor-cantidad,
+  .mensaje-disponibilidad,
+  .disp-cantidad {
+    color: #7c9bd3;
+      font-size: .6875rem;
+      display: block;
+      margin: 0;
+  }
+  
+  table.vertical-array th,
+  table.vertical-array td {
+    text-align: center;
+  }
+  
+  .validateEnvio{
+    width: 100px;
+    float: right;
+  }
+  
+  .item-noEnviado {
+    border: 1px solid #00000059 !important;
+    background: pink;
+  }
+  
+  .item-enviado {
+    border: 1px solid #41c315 !important;
+  }
+  
+  #test_pagination{
+    overflow: initial;
+  }
+  
+  .celdaInvalida input{
+    pointer-events: none;
+    background-color: #a9a7a7ad;
+  }
