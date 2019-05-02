@@ -1,3 +1,4 @@
+// 2
 function consultarCategoria(dato, callback){
     return $.ajax({
         type: "GET",

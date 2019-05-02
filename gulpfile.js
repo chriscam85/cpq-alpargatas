@@ -11,13 +11,22 @@ const cleanCss = require('gulp-clean-css')
 
 const PATH = {
     css: 'styles/*.css',
-    js: 'scripts/*.js',
+    js: [
+        'CustomJS/funcionesAuxiliares.js', 
+        'CustomJS/integraciones.js',
+        'CustomJS/Paginador.js',
+        'CustomJS/Pivo.js',
+        'CustomJS/tamanhosOcultos.js',
+        'CustomJS/totalDigitado.js',
+        'CustomJS/Disponibilidade2.js',
+        'CustomJS/validadorCelda.js',
+        'CustomJS/envioDatos.js'
+    ],
     libs: 'libs/*.js',
     output: 'build'
 }
 
 function tratamentJs(input, output) {
-    // gulp.src(['scripts/file3.js', 'scripts/file1.js', 'scripts/file2.js']), // Ordenar arquivos
     return [
         gulp.src(input),
         babel({ presets: ['@babel/env'] }),
