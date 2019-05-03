@@ -4,6 +4,7 @@
   
   #attribute-categoria_dinamico .attribute-field-container {
     max-width: 240px !important;
+    margin: 10px;
   }
   
   .button-invoke-create{
@@ -12,6 +13,7 @@
   
   .hideGrid,
   #campos_cota,
+
   #attribute-seleccionar_centro_text 
   {
     visibility: hidden;

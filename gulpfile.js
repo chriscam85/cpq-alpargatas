@@ -8,8 +8,11 @@ const uglifyjs = require('uglify-js')
 const composer = require('gulp-uglify/composer')
 const minify = composer(uglifyjs, console)
 const cleanCss = require('gulp-clean-css')
+const less = require('gulp-less')
+const sourcemaps = require('gulp-sourcemaps')
 
 const PATH = {
+    less: 'less/*.less',
     css: 'styles/*.css',
     js: [
         'CustomJS/funcionesAuxiliares.js', 
@@ -51,4 +54,23 @@ gulp.task('minify-css', () =>
     .pipe( gulp.dest( `${PATH.output}/css`) )
 )
 
-gulp.task('default', gulp.series( 'delete', gulp.parallel('minify-css', 'minify-scripts', 'minify-libs') ))
+gulp.task('edit-css', () => 
+    gulp.src(PATH.css)
+    .pipe( concat('all.css'))
+    .pipe( gulp.dest( `${PATH.output}/css`) )
+)
+
+gulp.task('less', () => 
+    gulp.src(PATH.less)
+    .pipe(sourcemaps.init())
+    .pipe( less() )
+    .pipe(sourcemaps.write('./maps'))
+    .pipe( gulp.dest(`${PATH.output}/css`) )
+)
+
+gulp.task('default', () =>  {
+    gulp.watch( 'less/**/*.less', gulp.series('less') )
+    gulp.watch( PATH.css, gulp.series('edit-css') )
+})
+
+gulp.task('build', gulp.series( 'delete', gulp.parallel('minify-css', 'minify-scripts', 'minify-libs') )) // npm run build
