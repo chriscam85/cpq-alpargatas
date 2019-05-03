@@ -41,47 +41,47 @@ envioDatos.prototype.run = function(){
 }
 
 envioDatos.prototype.armarSolicitudEnvioDatos = function(){
-  var me = this;
-  var request = new Object();
-  request.Disponibilidade = [];
-  $.each(me.celdasAEnviar, function(index, value){
-    var tamanho = ($(this).prop("name").match(/t(\d+)/) || []).pop();
-    var indiceColumna = $(this).prop("id").indexOf("-");
-    var columna = $(this).prop("id").substring(indiceColumna + 1);
-    var columnaValor = $("#cor_coluna-" + columna).val();
-    var sku = me.material + columnaValor + tamanho;
-    var part = new Object();
-    part.SKU_c = sku;
-    part.QTDE_c = Number($(value).val());
-    part.Data_c = me.data;
-    part.LinhaVenda_c = sku + me.transactionId;
-    part.Canal_c = me.canal;
-    part.Setor_c = me.setor;
-    part.Centro_c = me.centro;
-    part.MTO_c = "N";
-    part.Organizacao_c = me.organizacao;
-    part.TipoMaterial_c = me.tipoMaterial;
-    part.Escritorio_c = me.escritorio;
-    part.Equipe_c = me.equipe;
-    part.GrupoCli_c = "";
-    part.ProntaEntrega_c = "N";
-    part.Consulta_c = "0";
-    request.Disponibilidade.push(part);
-  });
-  return request;
+    var me = this;
+    var request = new Object();
+    request.Disponibilidade = [];
+    $.each(me.celdasAEnviar, function(index, value){
+        var tamanho = ($(this).prop("name").match(/t(\d+)/) || []).pop();
+        var indiceColumna = $(this).prop("id").indexOf("-");
+        var columna = $(this).prop("id").substring(indiceColumna + 1);
+        var columnaValor = $("#cor_coluna-" + columna).val();
+        var sku = me.material + columnaValor + tamanho;
+        var part = new Object();
+        part.SKU_c = sku;
+        part.QTDE_c = Number($(value).val());
+        part.Data_c = me.data;
+        part.LinhaVenda_c = sku + me.transactionId;
+        part.Canal_c = me.canal;
+        part.Setor_c = me.setor;
+        part.Centro_c = me.centro;
+        part.MTO_c = "N";
+        part.Organizacao_c = me.organizacao;
+        part.TipoMaterial_c = me.tipoMaterial;
+        part.Escritorio_c = me.escritorio;
+        part.Equipe_c = me.equipe;
+        part.GrupoCli_c = "";
+        part.ProntaEntrega_c = "N";
+        part.Consulta_c = "0";
+        request.Disponibilidade.push(part);
+    });
+    return request;
 }
 
 envioDatos.prototype.ejecutarEnvioDatosDisponibilidadeDone = function(listaSku){
     var me = this;
-  $.each(listaSku, function(index, value){
-    if(value.QTDE_c > 0){
-        me.validaCelda(value.SKU_c, true);
-    }
-    else{
-        me.validaCelda(value.SKU_c, false);
-    }
-  });
-  this.ocultaBotones();
+    $.each(listaSku, function(index, value){
+        if(value.QTDE_c > 0){
+            me.validaCelda(value.SKU_c, true);
+        }
+        else{
+            me.validaCelda(value.SKU_c, false);
+        }
+    });
+    this.ocultaBotones();
 }
 
 
@@ -102,10 +102,10 @@ envioDatos.prototype.validaCelda = function(sku, valido){
 envioDatos.prototype.ocultaBotones = function(){
     var hayError = this.hayItemError();
     if(hayError){
-        $("#add_to_transaÃ§Ã£o, #update").hide();
+        $("#add_to_transação, #update").hide();
     }
     else{
-        $("#add_to_transaÃ§Ã£o, #update").show();
+        $("#add_to_transação, #update").show();
     }
 }
 
