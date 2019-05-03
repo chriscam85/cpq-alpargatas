@@ -20,7 +20,8 @@ const PATH = {
         'CustomJS/totalDigitado.js',
         'CustomJS/Disponibilidade2.js',
         'CustomJS/validadorCelda.js',
-        'CustomJS/envioDatos.js'
+        'CustomJS/envioDatos.js',
+        'CustomJS/modelJS.js'
     ],
     libs: 'javascript/*.js',
     output: 'build'
