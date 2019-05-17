@@ -1,11 +1,13 @@
+// Creación del objeto
 function totalDigitado(){
     this.celdasTamanhos;
   }
-  
+  // Recibe un objeto y setea sus valores a los atributos correspondientes
   totalDigitado.prototype.setProperties = function(object){
     this.celdasTamanhos = object.celdasTamanhos;
   }
   
+  // A la lista de celdas tamanhos le asigna el evento input y su funcion de totalizador
   totalDigitado.prototype.run = function(){
     var me = this;
     $.each(this.celdasTamanhos, function(index, value){
@@ -16,6 +18,8 @@ function totalDigitado(){
     });
   }
   
+  // Valida el valor de la celda, si hace un totalizador con todas los valores de la fila de la celda
+  // pasada por parametro, y su suma la ingresa en la columna "totalDigitado"
   totalDigitado.prototype.sumarTotal = function(celda){
      var valActual = celda.value;
      if (valActual){

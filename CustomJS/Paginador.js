@@ -1,3 +1,4 @@
+// Creación del objeto
 function paginarTabla(){
 	this.cantidadDeFilasPorPagina;
 	this.tabla;
@@ -9,9 +10,9 @@ function paginarTabla(){
 	this.flechaRight;
 	this.flechaLeft;
 	this.cantidadDePaginas;
-
 }
 
+// Recibe un objeto y setea sus valores a los atributos correspondientes
 paginarTabla.prototype.setProperties = function(object){
 	this.cantidadDeFilasPorPagina = object.cantidadFilas;
 	this.tabla = object.tabla;
@@ -25,12 +26,14 @@ paginarTabla.prototype.setProperties = function(object){
 	this.cantidadDePaginas;
 }
 
+// Ejecuta todos los script para paginar la tabla
 paginarTabla.prototype.run = function(){
 	this.cargarPaginas();
 	this.paginar();
 	this.ingresarFlechas();
 }
 
+// Carga los array que contienen las filas que corresponden por pagina
 paginarTabla.prototype.cargarPaginas = function() {
 	var filasPag = this.filasPagina;
 	var cantFilas = this.cantidadDeFilasPorPagina;
@@ -54,6 +57,7 @@ paginarTabla.prototype.cargarPaginas = function() {
 	this.cantidadDePaginas = filasPorPag.length;
 }
 
+// Muestra las filas de la pagina correspondiente
 paginarTabla.prototype.paginar = function() {
 	var paginaActual = this.paginaActual;
 	$.each(this.filasPorPagina, function(index, value){
@@ -70,6 +74,7 @@ paginarTabla.prototype.paginar = function() {
 	});
 }
 
+// Crea las flechas y les asigna el eventos click
 paginarTabla.prototype.ingresarFlechas = function() {
 	this.paginador.addClass("flechasPadre");
 	this.paginador.append('<div class="flechaLeft"></div>')
@@ -80,6 +85,7 @@ paginarTabla.prototype.ingresarFlechas = function() {
 	this.actualizarFlechas();
 }
 
+// Le agrega los eventos click a las flechas y le asigna su funcion
 paginarTabla.prototype.agregarEventosClick = function() {
 	var me = this;
 	var funcionSiguiente = this.paginaSiguiente;
@@ -92,6 +98,7 @@ paginarTabla.prototype.agregarEventosClick = function() {
 	});
 }
 
+// Cambia a la pagina siguiente, mostrando las filas que les corresponde
 paginarTabla.prototype.paginaSiguiente = function(me){
 	if(me.hayPagSiguiente()){
 		var paginaSiguiente = me.paginaActual + 1;
@@ -114,6 +121,7 @@ paginarTabla.prototype.paginaSiguiente = function(me){
 	}
 }
 
+// Verifica si hay alguna pagina siguiente
 paginarTabla.prototype.hayPagSiguiente = function() {
 	if(this.paginaActual + 1 <= this.cantidadDePaginas - 1){
 		return true;
@@ -123,6 +131,7 @@ paginarTabla.prototype.hayPagSiguiente = function() {
 	}
 }
 
+// Cambia a la pagina anterior, mostrando las filas que les corresponde
 paginarTabla.prototype.paginaAnterior = function(me){
 	if(me.hayPagAnterior()){
 		var paginaAnterior = me.paginaActual - 1;
@@ -145,6 +154,7 @@ paginarTabla.prototype.paginaAnterior = function(me){
 	}
 }
 
+// Verifica si hay alguna pagina anterior
 paginarTabla.prototype.hayPagAnterior = function() {
 	if(this.paginaActual - 1 >= 0){
 		return true;
@@ -154,6 +164,7 @@ paginarTabla.prototype.hayPagAnterior = function() {
 	}
 }
 
+// Cambia el color de la flecha dependiendo si hay pagina siguiente/anterior
 paginarTabla.prototype.actualizarFlechas = function() {
 	if(this.hayPagAnterior()){
 		this.flechaLeft.removeClass("flechaLeftActiva");

@@ -1,7 +1,7 @@
+// Inicializa variables a utilizar en todo el JS
 var modelo = $("#attribute-categoria_novo_text span").text();
 var celdasTamanhos = $('td[class*="cell-t"]').not(".cell-totalDigitado");
 var cantidadFilas = 12;
-
 var material = "00000000000" + modelo;
 var data = $("#DATA_PREV_FAT").val();
 var canal = $("#CANAL_DIST").val();
@@ -13,10 +13,10 @@ var equipe = $("#EQUI_VENDA").val();
 var transactionId = $("#TRANSACTION_ID").val();
 var tabla = $("table.array");
 var tipoMaterial;
-
 var ejecutarIntegracion = $("[name=ejecutarIntegracion]")[0];
 var cadenaIntegraciones = [];
 
+// Inicializa objetos/scripts
 var ocultaTamanhos = new ocultaTamanhos();
 var paginador = new paginarTabla();
 var disponibilidade = new allDisponibilidade();
@@ -25,6 +25,7 @@ var validaCelda = new validadorCelda();
 var envioDatos = new envioDatos();
 var totalDigitado = new totalDigitado();
 
+// Comienza el flujo del script
 $(document).ready(function(){
   consultarTipoMaterial(modelo, function(dato){
     tipoMaterial = dato;
@@ -32,9 +33,8 @@ $(document).ready(function(){
   });
 });
 
-
+// Setea valores en los objetos, ejecuta los script y agrega los eventos para validar celdas
 function masterJS(){
-  // $("#loading-mask").show();
   $(".hideGrid").css('visibility', 'visible');
   $("#validateEnvio").hide();
   $("#add_to_transação, #update").hide();
@@ -68,15 +68,9 @@ function masterJS(){
       });
     }
   });
-    
-/*  $(document).ajaxStop(function(){
-     eventosBlur(disponibilidade);
-     $("#loading-mask").hide();
-      $("#add_to_transacao, #update").show();
-    });
-*/
 }
 
+// Ejecuta el método "SetProperties" de cada objeto
 function setPropertiesObjects(){
     
   totalDigitado.setProperties({
@@ -136,6 +130,7 @@ function setPropertiesObjects(){
   });
 }
 
+// Recibe una lista de celdas, le asigna un evento 'blur', con el que se van a realizar las validaciones
 function eventosBlur(celdas){
   $.each(celdas, function(index, value){
     $(this).find("input").on('blur', function(){
@@ -152,8 +147,11 @@ function eventosBlur(celdas){
   });
 }
 
+// Realiza todas las validaciones de agrupaciones por disponibilidad
 function validarCelda(celda, disponibilidade, pivo){
-  var celdasConPedido = $('td[class*="cell-t"]').not(".cell-totalDigitado, .celdaInvalida").filter(function(index, value) {var valor = $(value).find("input").val(); return valor != "";});
+  var celdasConPedido = $('td[class*="cell-t"]').not(".cell-totalDigitado, .celdaInvalida")
+  .filter(function(index, value) 
+    {var valor = $(value).find("input").val(); return valor != "";});
   var pivoValido = pivo.validaPivoTotal(celdasConPedido);
   if(!pivoValido){
     validaClasesCeldas(celdasConPedido, false);
@@ -201,6 +199,9 @@ function validarCelda(celda, disponibilidade, pivo){
   }
 }
 
+// Recibe una lista de celdas y una condicion
+// Si la condicion es true, marca esas celdas como validas
+// Si la condicion es false, las marca con un error
 function validaClasesCeldas(celdas, condicion){
   var celdaError = celdas.find("div.attribute-field-container");
   var inputError = celdaError.find("input");
@@ -216,6 +217,7 @@ function validaClasesCeldas(celdas, condicion){
   }
 }
 
+// Si no hay celdas con error, muestra el boton "Validate"
 function validarBotonValidaEnvio(){
   var error = $(".error-qtd");
   if(error.length == 0){
@@ -226,6 +228,7 @@ function validarBotonValidaEnvio(){
   }
 }
 
+// Recibe una celda y le quita todas las clases para validaciones
 function removerClases(celda){
   var celdaError = celda.find("div.attribute-field-container");
   var inputValido = celdaError.find("input");
@@ -235,7 +238,7 @@ function removerClases(celda){
   inputValido.removeClass("item-enviado");
 }
 
-
+// Recibe una lista de filas y retorna una lista con todas las celdas de las filas recibidas
 function obtenerCeldasPorPagina(filasDisponibilizadas){
   var celdas = [];
   $.each(filasDisponibilizadas, function(index, value){
@@ -247,6 +250,8 @@ function obtenerCeldasPorPagina(filasDisponibilizadas){
   return celdas;
 }
 
+// Recibe un response de una integracion y lo agrega a la array global "cadenaIntegraciones"
+// Setea del array en el atributo "#datosIntegracion"
 function setearIntegracion(datos){
   $.each(datos, function(index, value){
     cadenaIntegraciones.push(JSON.stringify(value));
@@ -256,6 +261,7 @@ function setearIntegracion(datos){
   $("#datosIntegracion").attr("data-initial-value", cad);
 }
 
+// A todos los inputs de celdas Tamanhos, les agrega una clase con su SKU
 function agregarSku(){
   var celdasFila = $(celdasTamanhos).find("input.text-field:not([name='cor_coluna'], [name='totalDigitado'])");
   celdasFila.each(function(i, v) {
